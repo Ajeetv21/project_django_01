@@ -1,0 +1,30 @@
+<!-- myapp/templates/base.html -->
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}My Site{% endblock %}</title>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact'%}">Contacts U s</a></li>
+        <button><a href="{% url 'login'%}">Login</a></button>
+        <button><a href="{% url 'signup'%}">Sign Up</a></button>
+
+        <!-- Add more navigation links as needed -->
+    </ul>
+</nav>
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
